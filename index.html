@@ -4,258 +4,407 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090910">
-<title>MMV Esport | Blood Strike</title>
+<meta name="theme-color" content="#09090f">
+<meta name="description" content="MMV Esport : équipe multigaming, Blood Strike, joueurs, staff, sponsors et réseaux.">
+<title>MMV Esport | Site officiel</title>
 <style>
-:root{--bg:#090910;--panel:#151320;--purple:#a855f7;--light:#d8b4fe;--text:#f7f4ff;--muted:#aaa5bd}
+:root {
+  --bg:#09090f;
+  --panel:#13131e;
+  --panel2:#1b1928;
+  --purple:#a855f7;
+  --purple2:#7c3aed;
+  --text:#f7f4ff;
+  --muted:#aaa5bd;
+  --border:#302641;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.6
+}
 button,a{font:inherit}
 button{cursor:pointer}
-header{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:#0c0a13;border-bottom:1px solid #30203f;position:sticky;top:0;z-index:10}
-.logo{font-weight:900;font-size:21px;letter-spacing:1px}
+a{color:inherit;text-decoration:none}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,9,15,.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px)
+}
+.nav{
+  max-width:1100px;margin:auto;padding:12px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px}
 .logo span,.purple{color:var(--purple)}
 .menu-wrap{position:relative}
-.menu-btn{background:#191323;color:white;border:1px solid #49315e;border-radius:10px;padding:8px 14px;font-size:25px}
-.dropdown{position:absolute;right:0;top:52px;background:#191323;border:1px solid #49315e;border-radius:12px;width:210px;padding:8px;box-shadow:0 12px 35px #000a}
-.dropdown button{display:block;width:100%;text-align:left;color:white;background:none;border:0;padding:13px;border-radius:7px}
-.dropdown button:hover,.dropdown button:focus{background:#38204c}
-[hidden]{display:none!important}
-.hero{text-align:center;padding:85px 20px 75px;background:radial-gradient(ellipse at 50% 0%,#53217d 0%,#1c102b 35%,#090910 75%)}
-.tag{font-size:12px;letter-spacing:4px;color:var(--light);font-weight:bold}
-h1{font-size:clamp(42px,11vw,76px);margin:20px 0 12px;line-height:1.05}
-.hero p{color:#d0c5df;line-height:1.8;max-width:530px;margin:15px auto 25px}
-.btn{display:inline-block;border:0;background:var(--purple);color:white;padding:13px 18px;border-radius:8px;font-weight:bold;text-decoration:none;margin:5px}
-.btn.secondary{background:transparent;border:1px solid var(--purple)}
-main{min-height:55vh}
-section{padding:55px 6%;max-width:1100px;margin:auto}
+.menu-btn{
+  width:46px;height:42px;border-radius:12px;
+  background:var(--panel2);border:1px solid var(--border);
+  color:white;font-size:25px
+}
+.dropdown{
+  position:absolute;right:0;top:51px;width:225px;
+  padding:8px;background:#171522;border:1px solid var(--border);
+  border-radius:14px;box-shadow:0 12px 35px #0009
+}
+.dropdown[hidden]{display:none}
+.dropdown button{
+  width:100%;text-align:left;padding:12px;border:0;
+  border-radius:8px;background:transparent;color:white
+}
+.dropdown button:hover,.dropdown button:focus{background:#302044}
+.hero{
+  text-align:center;padding:90px 20px 65px;
+  background:radial-gradient(ellipse at 50% 0%,#53217d 0%,#191020 40%,var(--bg) 75%)
+}
+.tag{
+  display:inline-block;color:#d9b5ff;background:#261735;
+  border:1px solid #49305f;border-radius:30px;
+  padding:6px 12px;font-size:12px;font-weight:bold;letter-spacing:1px
+}
+h1{font-size:clamp(40px,10vw,76px);line-height:1.05;margin:20px 0}
 h2{font-size:30px;margin:12px 0}
-.intro{color:var(--muted);line-height:1.8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:25px}
-.card{background:linear-gradient(145deg,#191323,#100f18);border:1px solid #382447;border-radius:13px;padding:22px;overflow-wrap:anywhere}
-.card h3{margin:12px 0 7px}
-.card p{color:var(--muted);line-height:1.6;margin-bottom:0}
-.avatar{height:55px;width:55px;border-radius:12px;background:#38204c;display:grid;place-items:center;font-size:25px;font-weight:bold;color:var(--light)}
-.role{display:inline-block;margin-top:10px;background:#2a1939;color:var(--light);padding:6px 10px;border-radius:20px;font-size:12px}
-.number{font-size:13px;color:var(--purple);letter-spacing:2px}
-.banner{padding:25px;border:1px solid #69408a;background:#191023;border-radius:14px}
-footer{border-top:1px solid #30203f;text-align:center;padding:25px;color:var(--muted);font-size:13px}
-footer a{color:var(--light)}
-.empty{color:var(--muted);padding:22px;border:1px dashed #49315e;border-radius:10px}
-@media(max-width:420px){header{padding:0 5%}.logo{font-size:18px}section{padding:42px 5%}.hero{padding-top:70px}}
+h3{margin:10px 0}
+.hero p,.intro{color:var(--muted);max-width:650px;margin:14px auto}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:25px}
+.btn{
+  display:inline-block;padding:12px 18px;border-radius:9px;
+  background:var(--purple2);color:white;border:1px solid var(--purple);
+  font-weight:bold
+}
+.btn.secondary{background:transparent;border-color:var(--border)}
+.btn:hover{filter:brightness(1.15)}
+main{max-width:1050px;margin:auto;padding:25px 18px 55px}
+.page{display:none;animation:appear .2s ease}
+.page.active{display:block}
+section{padding:35px 0}
+.section-head{text-align:center;margin-bottom:24px}
+.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{
+  padding:22px;background:linear-gradient(145deg,var(--panel2),var(--panel));
+  border:1px solid var(--border);border-radius:15px;overflow-wrap:anywhere
+}
+.card p{color:var(--muted);margin-bottom:15px}
+.avatar{
+  width:60px;height:60px;display:grid;place-items:center;
+  border-radius:15px;background:#2a1940;border:1px solid #543274;
+  color:#e3c8ff;font-size:25px;font-weight:bold
+}
+.role{font-size:12px;color:#d9b5ff;letter-spacing:1px;text-transform:uppercase}
+.badge{
+  display:inline-block;font-size:12px;padding:4px 9px;
+  background:#251833;border-radius:20px;color:#d9b5ff
+}
+.list{display:grid;gap:12px}
+.row-card{
+  padding:17px;border:1px solid var(--border);border-radius:12px;
+  background:var(--panel);display:flex;align-items:center;gap:14px
+}
+.row-card .avatar{flex-shrink:0;width:48px;height:48px}
+.row-card p{margin:2px 0;color:var(--muted)}
+.empty{border:1px dashed #49315e;border-radius:12px;padding:22px;text-align:center;color:var(--muted)}
+.network{display:flex;align-items:center;gap:14px}
+.network .btn{margin-left:auto;flex-shrink:0}
+footer{
+  text-align:center;border-top:1px solid var(--border);
+  padding:25px 15px;color:var(--muted);font-size:13px
+}
+@keyframes appear{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:420px){
+  .hero{padding-top:65px}
+  .logo{font-size:18px}
+  .network{flex-wrap:wrap}
+  .network .btn{margin-left:0}
+}
 </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">MMV <span>ESPORT</span></div>
-  <div class="menu-wrap">
-    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir les catégories"
-      aria-expanded="false" aria-controls="menu" type="button">⋮</button>
-    <nav class="dropdown" id="menu" hidden>
-      <button data-page="accueil">⌂ Accueil</button>
-      <button data-page="joueurs">♟ Joueurs</button>
-      <button data-page="staff">★ Staff</button>
-      <button data-page="jeu">🎮 Blood Strike</button>
-      <button data-page="recrutement">＋ Recrutement</button>
-      <button data-page="contact">✉ Contact</button>
-    </nav>
+  <div class="nav">
+    <a class="logo" href="#accueil" aria-label="MMV Esport accueil">MMV <span>ESPORT</span></a>
+    <div class="menu-wrap">
+      <button class="menu-btn" id="menuBtn" aria-label="Ouvrir les catégories"
+        aria-expanded="false" aria-controls="menu" type="button">⋮</button>
+      <nav class="dropdown" id="menu" hidden aria-label="Catégories">
+        <button data-page="accueil">⌂ Accueil</button>
+        <button data-page="joueurs">♟ Joueurs</button>
+        <button data-page="staff">🛡 Staff</button>
+        <button data-page="bloodstrike">🎮 Blood Strike</button>
+        <button data-page="sponsors">🤝 Sponsors</button>
+        <button data-page="reseaux">🌐 Nos réseaux</button>
+        <button data-page="recrutement">✚ Recrutement</button>
+        <button data-page="contact">✉ Contact</button>
+      </nav>
+    </div>
   </div>
 </header>
 
-<main>
-<section class="hero" id="hero">
-  <div class="tag">ORGANISATION ESPORT</div>
+<div class="hero">
+  <div class="tag">ORGANISATION ESPORT MULTIGAMING</div>
   <h1>MMV <span class="purple">ESPORT</span></h1>
-  <p>Une équipe. Une ambition. Une seule famille.<br>
-  Nous représentons MMV sur Blood Strike avec passion, stratégie et esprit d'équipe.</p>
-  <button class="btn" data-go="joueurs">DÉCOUVRIR LES JOUEURS</button>
-  <button class="btn secondary" data-go="recrutement">NOUS REJOINDRE</button>
-</section>
-
-<div id="page-accueil" class="page">
-  <section>
-    <div class="tag">BIENVENUE CHEZ NOUS</div>
-    <h2>La team <span class="purple">MMV Esport</span></h2>
-    <p class="intro">MMV Esport est une équipe compétitive axée sur Blood Strike. Retrouvez ici notre roster, notre staff et les informations de recrutement.</p>
-    <div class="grid">
-      <article class="card"><div class="avatar">⚔</div><h3>Notre roster</h3><p>Découvrez les joueurs qui représentent MMV.</p><button class="btn" data-go="joueurs">Voir les joueurs</button></article>
-      <article class="card"><div class="avatar">★</div><h3>Notre staff</h3><p>Les personnes qui organisent et accompagnent l'équipe.</p><button class="btn" data-go="staff">Voir le staff</button></article>
-      <article class="card"><div class="avatar">🎮</div><h3>Notre jeu</h3><p>Notre terrain de compétition : Blood Strike.</p><button class="btn" data-go="jeu">Découvrir</button></article>
-    </div>
-  </section>
+  <p>Une équipe. Une ambition. Une seule famille.
+  Le jeu, la compétition et l'esprit d'équipe nous rassemblent.</p>
+  <div class="actions">
+    <button class="btn" data-go="joueurs">Découvrir les joueurs</button>
+    <button class="btn secondary" data-go="recrutement">Nous rejoindre</button>
+  </div>
 </div>
 
-<div id="page-joueurs" class="page" hidden>
-  <section>
-    <div class="tag">ROSTER OFFICIEL</div>
-    <h2>Nos <span class="purple">joueurs</span></h2>
-    <p class="intro">Voici les joueurs de MMV Esport. Remplace les exemples par les vrais pseudos.</p>
-    <div class="grid" id="players"></div>
-  </section>
-</div>
+<main>
+  <div class="page active" id="page-accueil">
+    <section>
+      <div class="section-head">
+        <div class="tag">BIENVENUE CHEZ NOUS</div>
+        <h2>La team <span class="purple">MMV Esport</span></h2>
+        <p>Une organisation multigaming ambitieuse, unie par la passion,
+        le respect et la progression.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="avatar">🎮</div>
+          <h3>Nos jeux</h3>
+          <p>Notre jeu principal : Blood Strike. D'autres jeux pourront rejoindre l'aventure.</p>
+          <button class="btn secondary" data-go="bloodstrike">Découvrir</button>
+        </article>
+        <article class="card">
+          <div class="avatar">♟</div>
+          <h3>Notre équipe</h3>
+          <p>Découvrez les joueurs et les personnes qui font vivre la team.</p>
+          <button class="btn secondary" data-go="joueurs">Voir le roster</button>
+        </article>
+        <article class="card">
+          <div class="avatar">🤝</div>
+          <h3>Nos partenaires</h3>
+          <p>Merci aux partenaires qui soutiennent le développement de MMV Esport.</p>
+          <button class="btn secondary" data-go="sponsors">Nos sponsors</button>
+        </article>
+      </div>
+    </section>
+  </div>
 
-<div id="page-staff" class="page" hidden>
-  <section>
-    <div class="tag">L'ÉQUIPE EN COULISSES</div>
-    <h2>Notre <span class="purple">staff</span></h2>
-    <p class="intro">Les membres qui encadrent, organisent et font avancer MMV Esport.</p>
-    <div class="grid" id="staff"></div>
-  </section>
-</div>
+  <div class="page" id="page-joueurs">
+    <section>
+      <div class="section-head">
+        <div class="tag">LE ROSTER</div>
+        <h2>Nos <span class="purple">joueurs</span></h2>
+        <p>Les membres de MMV Esport et leurs rôles.</p>
+      </div>
+      <div class="grid">
+        <!-- Pour ajouter un joueur, copie une carte et remplace son contenu. -->
+        <article class="card">
+          <div class="avatar">M</div>
+          <div class="role">Joueur</div>
+          <h3>Pseudo du joueur 1</h3>
+          <p>Blood Strike · Rôle à préciser</p>
+        </article>
+        <article class="card">
+          <div class="avatar">M</div>
+          <div class="role">Joueur</div>
+          <h3>Pseudo du joueur 2</h3>
+          <p>Blood Strike · Rôle à préciser</p>
+        </article>
+        <article class="card">
+          <div class="avatar">M</div>
+          <div class="role">Joueur</div>
+          <h3>Pseudo du joueur 3</h3>
+          <p>Blood Strike · Rôle à préciser</p>
+        </article>
+      </div>
+      <p class="intro">Remplace les pseudos exemples par ceux de tes vrais joueurs dans le code.</p>
+    </section>
+  </div>
 
-<div id="page-jeu" class="page" hidden>
-  <section>
-    <div class="tag">NOTRE UNIVERS COMPÉTITIF</div>
-    <h2><span class="purple">Blood Strike</span></h2>
-    <div class="banner">
-      <h3>MMV Esport × Blood Strike</h3>
-      <p class="intro">Notre équipe se retrouve sur Blood Strike pour progresser, jouer ensemble et viser la compétition. Retrouvez notre roster et nos annonces sur ce site.</p>
-      <button class="btn" data-go="joueurs">Voir le roster</button>
-    </div>
-  </section>
-</div>
+  <div class="page" id="page-staff">
+    <section>
+      <div class="section-head">
+        <div class="tag">L'ÉQUIPE EN COULISSES</div>
+        <h2>Notre <span class="purple">staff</span></h2>
+        <p>Les personnes qui organisent, accompagnent et développent la team.</p>
+      </div>
+      <div class="grid">
+        <!-- Copie cette carte pour ajouter un membre du staff. -->
+        <article class="card">
+          <div class="avatar">★</div>
+          <div class="role">Fondateur</div>
+          <h3>Pseudo du fondateur</h3>
+          <p>Direction et développement de MMV Esport.</p>
+        </article>
+        <article class="card">
+          <div class="avatar">S</div>
+          <div class="role">Manager</div>
+          <h3>Pseudo du manager</h3>
+          <p>Organisation et accompagnement des joueurs.</p>
+        </article>
+      </div>
+    </section>
+  </div>
 
-<div id="page-recrutement" class="page" hidden>
-  <section>
-    <div class="tag">REJOIGNEZ L'AVENTURE</div>
-    <h2>Recrutement <span class="purple">MMV</span></h2>
-    <div class="banner">
-      <h3>Tu veux rejoindre la team ?</h3>
-      <p class="intro">Nous recherchons des joueurs motivés, respectueux et prêts à progresser sur Blood Strike.</p>
-      <p class="intro">Pour candidater, contacte-nous via le lien Discord ci-dessous. Pense à remplacer ce lien par celui de ton serveur.</p>
-      <a class="btn" id="discordRecruit" href="https://discord.com/" target="_blank" rel="noopener">REJOINDRE NOTRE DISCORD</a>
-    </div>
-  </section>
-</div>
+  <div class="page" id="page-bloodstrike">
+    <section>
+      <div class="section-head">
+        <div class="tag">NOTRE JEU PRINCIPAL</div>
+        <h2>MMV sur <span class="purple">Blood Strike</span></h2>
+        <p>Stratégie, précision, communication et esprit collectif.</p>
+      </div>
+      <div class="card">
+        <div class="avatar">🎯</div>
+        <h3>Notre ambition</h3>
+        <p>MMV Esport réunit des joueurs passionnés de Blood Strike.
+        Notre objectif est de progresser ensemble, participer à des compétitions
+        et représenter fièrement notre organisation.</p>
+        <span class="badge">MULTIGAMING</span>
+        <span class="badge">ESPRIT D'ÉQUIPE</span>
+        <span class="badge">COMPÉTITION</span>
+      </div>
+    </section>
+  </div>
 
-<div id="page-contact" class="page" hidden>
-  <section>
-    <div class="tag">RESTONS EN CONTACT</div>
-    <h2>Contact <span class="purple">MMV</span></h2>
-    <p class="intro">Pour les demandes de recrutement, les partenariats ou les questions, retrouve-nous sur notre Discord.</p>
-    <a class="btn" id="discordContact" href="https://discord.com/" target="_blank" rel="noopener">NOTRE DISCORD</a>
-    <p class="intro">Lien à personnaliser dans le code avec l'invitation officielle de votre serveur.</p>
-  </section>
-</div>
+  <div class="page" id="page-sponsors">
+    <section>
+      <div class="section-head">
+        <div class="tag">NOS PARTENAIRES</div>
+        <h2>Nos <span class="purple">sponsors</span></h2>
+        <p>Les partenaires qui accompagnent l'aventure MMV Esport.</p>
+      </div>
+      <div class="grid">
+        <!-- Remplace cet exemple par ton sponsor. -->
+        <article class="card">
+          <div class="avatar">🤝</div>
+          <div class="role">Partenaire</div>
+          <h3>Sponsor à annoncer</h3>
+          <p>La présentation de notre partenaire sera publiée ici.</p>
+          <!-- Remplace # par le vrai lien du sponsor. -->
+          <a class="btn secondary" href="#" rel="noopener">Site du partenaire</a>
+        </article>
+      </div>
+      <p class="intro">Vous souhaitez devenir partenaire de MMV Esport ?
+      Contactez notre équipe.</p>
+      <div class="actions">
+        <button class="btn" data-go="contact">Proposer un partenariat</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" id="page-reseaux">
+    <section>
+      <div class="section-head">
+        <div class="tag">RESTONS CONNECTÉS</div>
+        <h2>Nos <span class="purple">réseaux</span></h2>
+        <p>Retrouvez MMV Esport et suivez nos actualités.</p>
+      </div>
+      <div class="list">
+        <!-- Remplace les # par les liens officiels de la team. -->
+        <article class="row-card network">
+          <div class="avatar">D</div>
+          <div><h3>Discord</h3><p>Rejoins notre communauté.</p></div>
+          <a class="btn" href="#" rel="noopener">Rejoindre</a>
+        </article>
+        <article class="row-card network">
+          <div class="avatar">T</div>
+          <div><h3>TikTok</h3><p>Clips, actions et moments forts.</p></div>
+          <a class="btn" href="#" rel="noopener">Découvrir</a>
+        </article>
+        <article class="row-card network">
+          <div class="avatar">▶</div>
+          <div><h3>YouTube</h3><p>Vidéos et contenus de la team.</p></div>
+          <a class="btn" href="#" rel="noopener">Regarder</a>
+        </article>
+        <article class="row-card network">
+          <div class="avatar">X</div>
+          <div><h3>Instagram / X</h3><p>Actualités et annonces.</p></div>
+          <a class="btn" href="#" rel="noopener">Suivre</a>
+        </article>
+      </div>
+      <p class="intro">Les boutons fonctionneront dès que tu auras ajouté les véritables URL de tes réseaux.</p>
+    </section>
+  </div>
+
+  <div class="page" id="page-recrutement">
+    <section>
+      <div class="section-head">
+        <div class="tag">REJOINS L'AVENTURE</div>
+        <h2>Recrutement <span class="purple">MMV</span></h2>
+        <p>Tu souhaites rejoindre une équipe motivée sur Blood Strike ?</p>
+      </div>
+      <div class="card">
+        <h3>Nous recherchons des joueurs motivés</h3>
+        <p>Présente-toi, indique ton pseudo en jeu, ton expérience et tes disponibilités.
+        Le respect et l'esprit d'équipe sont essentiels.</p>
+        <button class="btn" data-go="contact">Nous contacter</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" id="page-contact">
+    <section>
+      <div class="section-head">
+        <div class="tag">CONTACT</div>
+        <h2>Parlons <span class="purple">ensemble</span></h2>
+        <p>Pour le recrutement, les partenariats ou les questions concernant la team.</p>
+      </div>
+      <div class="card">
+        <h3>Contact officiel</h3>
+        <p>Ajoute ici le lien Discord officiel ou une adresse e-mail de contact.</p>
+        <button class="btn" data-go="reseaux">Voir nos réseaux</button>
+      </div>
+    </section>
+  </div>
 </main>
 
 <footer>
-  <div><strong>MMV <span class="purple">ESPORT</span></strong></div>
-  <p>Blood Strike · Esprit d'équipe · Compétition</p>
-  <p>© <span id="year"></span> MMV Esport. Tous droits réservés.</p>
+  <p><strong>MMV <span class="purple">ESPORT</span></strong></p>
+  <p>Multigaming · Blood Strike · Ensemble, progressons.</p>
+  <p>© <span id="year"></span> MMV Esport — Tous droits réservés.</p>
+  <button class="btn secondary" data-go="accueil">Retour à l'accueil ↑</button>
 </footer>
 
 <script>
-/* ======================================
-   PERSONNALISE LES NOMS ICI
-   Remplace les exemples par vos pseudos.
-   Ajoute ou supprime des lignes si besoin.
-   ====================================== */
+(function(){
+  const menuBtn = document.getElementById('menuBtn');
+  const menu = document.getElementById('menu');
+  const pages = document.querySelectorAll('.page');
 
-const joueurs = [
-  {nom:"Pseudo Joueur 1",role:"Capitaine"},
-  {nom:"Pseudo Joueur 2",role:"Joueur"},
-  {nom:"Pseudo Joueur 3",role:"Joueur"},
-  {nom:"Pseudo Joueur 4",role:"Joueur"},
-  {nom:"Pseudo Joueur 5",role:"Remplaçant"}
-];
+  function closeMenu(){
+    menu.hidden = true;
+    menuBtn.setAttribute('aria-expanded','false');
+  }
 
-const membresStaff = [
-  {nom:"Trax & Raze",role:"Fondateur"},
-  {nom:"Pseudo Manager",role:"Manager"},
-  {nom:"Pseudo Coach",role:"Coach"},
-  {nom:"Pseudo Modérateur",role:"Community Manager"}
-];
+  function showPage(name){
+    const target = document.getElementById('page-' + name);
+    if(!target) return;
+    pages.forEach(page => page.classList.toggle('active', page === target));
+    closeMenu();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
 
-/* Colle ici ton lien d'invitation Discord entre guillemets.
-   Exemple : "https://discord.gg/TONCODE" */
-const lienDiscord = "https://discord.gg/bMtVs9RdYK";
-
-/* ====================================== */
-
-function creerCartes(liste,conteneur,icone){
-  const zone=document.getElementById(conteneur);
-  zone.replaceChildren();
-  liste.forEach((personne,index)=>{
-    const carte=document.createElement("article");
-    carte.className="card";
-    const avatar=document.createElement("div");
-    avatar.className="avatar";
-    avatar.textContent=icone;
-    const numero=document.createElement("div");
-    numero.className="number";
-    numero.textContent=String(index+1).padStart(2,"0");
-    const nom=document.createElement("h3");
-    nom.textContent=personne.nom;
-    const role=document.createElement("span");
-    role.className="role";
-    role.textContent=personne.role;
-    carte.append(avatar,numero,nom,role);
-    zone.appendChild(carte);
+  menuBtn.addEventListener('click', function(){
+    menu.hidden = !menu.hidden;
+    menuBtn.setAttribute('aria-expanded', String(!menu.hidden));
   });
-}
-creerCartes(joueurs,"players","⚔");
-creerCartes(membresStaff,"staff","★");
 
-document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("discordRecruit").href=lienDiscord;
-document.getElementById("discordContact").href=lienDiscord;
+  menu.querySelectorAll('[data-page]').forEach(button => {
+    button.addEventListener('click', () => showPage(button.dataset.page));
+  });
 
-const menuBtn=document.getElementById("menuBtn");
-const menu=document.getElementById("menu");
+  document.querySelectorAll('[data-go]').forEach(button => {
+    button.addEventListener('click', () => showPage(button.dataset.go));
+  });
 
-function ouvrirMenu(ouvert){
-  menu.hidden=!ouvert;
-  menuBtn.setAttribute("aria-expanded",String(ouvert));
-}
-menuBtn.addEventListener("click",()=>ouvrirMenu(menu.hidden));
+  document.addEventListener('click', function(event){
+    if(!event.target.closest('.menu-wrap')) closeMenu();
+  });
 
-function afficherPage(nom){
-  document.querySelectorAll(".page").forEach(page=>page.hidden=true);
-  const page=document.getElementById("page-"+nom);
-  if(page)page.hidden=false;
-  document.getElementById("hero").hidden=nom!=="accueil";
-  ouvrirMenu(false);
-  window.scrollTo({top:0,behavior:"smooth"});
-}
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape') closeMenu();
+  });
 
-menu.querySelectorAll("[data-page]").forEach(bouton=>{
-  bouton.addEventListener("click",()=>afficherPage(bouton.dataset.page));
-});
-document.querySelectorAll("[data-go]").forEach(bouton=>{
-  bouton.addEventListener("click",()=>afficherPage(bouton.dataset.go));
-});
-document.addEventListener("click",event=>{
-  if(!event.target.closest(".menu-wrap"))ouvrirMenu(false);
-});
-document.addEventListener("keydown",event=>{
-  if(event.key==="Escape")ouvrirMenu(false);
-});
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
-<div id="page-sponsors" class="page">
-  <section>
-    <div class="tag">NOS PARTENAIRES</div>
-    <h2>Les sponsors de <span class="purple">MMV Esport</span></h2>
-    <p class="intro">
-      Merci à nos partenaires de soutenir notre équipe
-      et notre aventure sur Blood Strike !
-    </p>
-
-    <div class="grid">
-      <article class="card">
-        <div class="avatar">🤝</div>
-        <h3>Emplacement sponsor</h3>
-        <p>Nom du sponsor à ajouter ici.</p>
-        <a href="#" class="btn secondary">Découvrir</a>
-      </article>
-    </div>
-
-    <p class="intro">
-      Vous souhaitez devenir partenaire de MMV Esport ?
-      Contactez notre staff !
-    </p>
-  </section>
-</div>
